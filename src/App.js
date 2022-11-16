@@ -4,9 +4,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './screens/Home';
 import Products from "./screens/Products";
+import QuienesSomos from './screens/QuienesSomos';
+import Contacto from './screens/Contacto';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Detalle from './screens/DetalleProducto';
+import ContactoEnviado from './screens/ContactoEnviado';
+
+
 
 <link
   rel="stylesheet"
@@ -37,9 +42,11 @@ function App() {
         <NavBar/>
         <productsContext.Provider value={products}>
           <Routes>
-              <Route index path="/" element={<Home />}/>
+              <Route index path="/Home" element={<Home />}/>
               <Route path="/Products" element={<Products />} />
-              <Route path="/DetalleProducto/:id" element={<Detalle />} />
+              <Route path="/QuienesSomos" element={<QuienesSomos />} />
+              <Route path="/Contacto" element={<Contacto />} />
+              <Route path="/ContactoEnviado" element={<ContactoEnviado />} />
           </Routes>
         </productsContext.Provider>
         <Footer/>

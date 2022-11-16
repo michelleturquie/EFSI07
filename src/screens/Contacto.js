@@ -2,10 +2,12 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import './Contacto.css'
+
 
 function GridComplexExample() {
   return (
-    <Form>
+    <Form id="orden">
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEmail">
           <Form.Label>Email</Form.Label>
@@ -14,7 +16,7 @@ function GridComplexExample() {
 
         <Form.Group as={Col} controlId="formGridPassword">
           <Form.Label>Contraseña</Form.Label>
-          <Form.Control type="password" placeholder="Contraseña" />
+          <Form.Control type="password" placeholder="Password" />
         </Form.Group>
       </Row>
 
@@ -31,8 +33,7 @@ function GridComplexExample() {
 
         <Form.Group as={Col} controlId="formGridState">
           <Form.Label>Ciudad</Form.Label>
-          <Form.Select defaultValue="Choose...">
-            <option>Elegi una opcion</option>
+          <Form.Select defaultValue="Elija una opcion...">
             <option>Buenos Aires</option>
             <option>Resto del pais</option>
           </Form.Select>
@@ -44,13 +45,13 @@ function GridComplexExample() {
         </Form.Group>
       </Row>
 
-      <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="dark" type="submit" href="/ContactoEnviado">
+        Enviar
       </Button>
+
+        <br></br>
+        <br></br>
+        
     </Form>
   );
 }

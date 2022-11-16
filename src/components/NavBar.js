@@ -17,16 +17,21 @@ function navBar() {
       <br></br>
       <Navbar bg="dark" variant="dark">
         <Container>
+
           <Navbar.Brand href="/Home">Home</Navbar.Brand>
+
           <Nav >
             <Nav.Link href="/Products">Productos</Nav.Link>
           </Nav>
+
           <Nav>
             <Nav.Link href="/Contacto">Contacto</Nav.Link>
           </Nav>
+
           <Nav>
             <Nav.Link href="/QuienesSomos">Quienes Somos</Nav.Link>
           </Nav>
+
           <Button variant="light">
               <Image style={{width: 30, height:30}} src={Icon} />
           </Button>{' '}

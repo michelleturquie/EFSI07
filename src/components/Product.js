@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from 'react-bootstrap/Button';
 import Typography from '@mui/material/Typography';
 import { useParams } from "react-router-dom";
+import './Product'
 
 function Product({product}) {
   let { id } = useParams();
@@ -48,7 +49,9 @@ function Product({product}) {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button href={'/DetalleProducto/' + product.id} variant="secondary">Ver detalles</Button>
+
+        <Button href={'/DetalleProducto/' + product.id} variant="outline-info">Ver detalles</Button>
+        <Button id="orden" href={'/DetalleProducto/' + product.id} variant="dark">Agregar al carrito</Button>
         </CardActions>
       </Card>
     );

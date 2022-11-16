@@ -8,9 +8,8 @@ import QuienesSomos from './screens/QuienesSomos';
 import Contacto from './screens/Contacto';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Detalle from './screens/DetalleProducto';
+import DetalleProducto from './screens/DetalleProducto';
 import ContactoEnviado from './screens/ContactoEnviado';
-
 
 
 <link
@@ -24,6 +23,7 @@ export const productsContext = React.createContext();
 
 function App() {
   const [products, setProducts] = useState([])
+
   //Trae los productos de la API:
   useEffect(() => {
     fetch(`https://dummyjson.com/products`)
@@ -34,7 +34,8 @@ function App() {
     .catch(err => console.error(err));
   }, []);
 
-  if(!products) return <div>Cargando datos...</div>;
+  if(!products) return <div>Cargando datos...</div>
+  
 
   return (
     <div className="App">
@@ -43,6 +44,7 @@ function App() {
         <productsContext.Provider value={products}>
           <Routes>
               <Route index path="/Home" element={<Home />}/>
+              <Route path="/DetalleProducto" element={<DetalleProducto />} />
               <Route path="/Products" element={<Products />} />
               <Route path="/QuienesSomos" element={<QuienesSomos />} />
               <Route path="/Contacto" element={<Contacto />} />

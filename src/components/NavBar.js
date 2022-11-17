@@ -32,7 +32,7 @@ function navBar() {
             <Nav.Link href="/QuienesSomos">Quienes Somos</Nav.Link>
           </Nav>
 
-          <Button variant="light">
+          <Button href="/Carrito" variant="light">
               <Image style={{width: 30, height:30}} src={Icon} />
           </Button>{' '}
         </Container>

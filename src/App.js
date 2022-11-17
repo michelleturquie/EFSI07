@@ -48,6 +48,7 @@ function App() {
               <Route path="/Products" element={<Products />} />
               <Route path="/QuienesSomos" element={<QuienesSomos />} />
               <Route path="/Contacto" element={<Contacto />} />
+              <Route path="/DetalleProducto/:id" element={<DetalleProducto />} />
               <Route path="/ContactoEnviado" element={<ContactoEnviado />} />
           </Routes>
         </productsContext.Provider>

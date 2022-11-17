@@ -18,7 +18,7 @@ function navBar() {
       <Navbar bg="dark" variant="dark">
         <Container>
 
-          <Navbar.Brand href="/Home">Home</Navbar.Brand>
+          <Navbar.Brand href="/">Home</Navbar.Brand>
 
           <Nav >
             <Nav.Link href="/Products">Productos</Nav.Link>

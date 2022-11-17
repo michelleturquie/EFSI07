@@ -5,7 +5,7 @@ import {productsContext} from '../App.js'
 import {Box, Grid} from '@mui/material';
 
 function ProductList(quantity) {
-    let products = useContext(productsContext);
+    const {products} = useContext(productsContext);
     if(products) {
         return (
             <Box sx={{ flexGrow: 4 }}>

@@ -30,6 +30,7 @@ function App() {
     .then(res => res.json())
     .then(res => {
         setProducts(res.products)
+        console.log(res.products)
     })
     .catch(err => console.error(err));
   }, []);
@@ -41,14 +42,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar/>
-        <productsContext.Provider value={products}>
+        <productsContext.Provider value={{products}}>
           <Routes>
-              <Route index path="/Home" element={<Home />}/>
+              <Route index path="/" element={<Home />}/>
               <Route path="/DetalleProducto" element={<DetalleProducto />} />
               <Route path="/Products" element={<Products />} />
               <Route path="/QuienesSomos" element={<QuienesSomos />} />
               <Route path="/Contacto" element={<Contacto />} />
-              <Route path="/DetalleProducto/:id" element={<DetalleProducto />} />
               <Route path="/ContactoEnviado" element={<ContactoEnviado />} />
           </Routes>
         </productsContext.Provider>

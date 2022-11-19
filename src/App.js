@@ -8,9 +8,10 @@ import QuienesSomos from './screens/QuienesSomos';
 import Contacto from './screens/Contacto';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Product from "./components/Product.js";
 import DetalleProducto from './screens/DetalleProducto';
 import ContactoEnviado from './screens/ContactoEnviado';
-
+import Carrito from './screens/Carrito';
 
 <link
   rel="stylesheet"
@@ -22,6 +23,7 @@ import ContactoEnviado from './screens/ContactoEnviado';
 export const productsContext = React.createContext();
 
 function App() {
+  
   const [products, setProducts] = useState([])
 
   //Trae los productos de la API:
@@ -29,13 +31,15 @@ function App() {
     fetch(`https://dummyjson.com/products`)
     .then(res => res.json())
     .then(res => {
-        setProducts(res.products)
-        console.log(res.products)
+      setProducts(res.products)
     })
     .catch(err => console.error(err));
   }, []);
-
-  if(!products) return <div>Cargando datos...</div>
+  if(!products) return <div>Cargando datos...</div>;
+  let aux = products
+  aux.map(obj => {
+    aux[obj.id-1].quantity = 0
+  })
   
 
   return (
@@ -50,6 +54,8 @@ function App() {
               <Route path="/QuienesSomos" element={<QuienesSomos />} />
               <Route path="/Contacto" element={<Contacto />} />
               <Route path="/ContactoEnviado" element={<ContactoEnviado />} />
+              <Route path="/Carrito" element={<Carrito />} />
+
           </Routes>
         </productsContext.Provider>
         <Footer/>

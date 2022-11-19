@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import {productsContext} from '../App.js'
 import Product from "../components/Product.js";
 
-function DetalleProducto() {
+function Detalle() {
     let { id } = useParams();
     let {products, setProducts} = useContext(productsContext);
 
@@ -21,7 +21,6 @@ function DetalleProducto() {
     } else {
         return "Cargando...";
     }
-    <br></br>
 }
 
-export default DetalleProducto;
+export default Detalle;
